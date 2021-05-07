@@ -3,12 +3,51 @@ package co.uk.next.StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class AccountSearchSteps {
+
+    // importing selenium into my project
+
+    WebDriver driver;
+
+    // here i create an object
+    // is selenium
+
+    // webDriver here is library where driver is stored
 
     @Given("I navigate to next homepage")
     public void i_navigate_to_next_homepage() {
 
+        //Launch a browser
+        //Enter the URL
+        //Navigate to the URL
+
+        WebDriverManager.chromedriver().setup();
+
+        driver = new ChromeDriver();
+
+        driver.navigate().to("https://www.next.co.uk/");
+        driver.findElement(By.className("class=\"nxbtn primary large\"")).sendKeys();
+
+
+        // I want driver to launch chrome for (driver = new ChromeDriver();)
+
+       // WebDriverManager.edgedriver();
+       // driver = new EdgeDriver();
+
+
+
+
+        //WebDriverManager is all browsers
+        //Chromedriver() is the browser you want to run the application on
+        // Setup() the webDriver has been set up to chromedriver
     }
 
     @When("I click on {string} button")
