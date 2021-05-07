@@ -24,4 +24,4 @@ Feature: New account
 
     Examples:
       | REGISTER NOW | MyTitle | FirstName | LastName | Email | Password | DateOfBirth | ContactTelephone | House No./ Name | Postcode | PleaseSelectAddress | GREAT,REGISTERMYACCOUNT | ShopNow |
-#      |Register now  |   Mr      |  Tunde         |  Ade        | tunadng@yahoo.com      |   07809127596       |  45           |   M24 2FZ               |45 Fern Close Middleton Manchester                 |          |                     |                         |         |
+     |Register now  |   Mr      |  Tunde         |  Ade        | tunadng@yahoo.com      |   07809127596       |  45           |   M24 2FZ               |45 Fern Close Middleton Manchester                 |          |                     |                         |         |
