@@ -1,5 +1,7 @@
 package co.uk.next.StepDefinitions;
 
+import co.uk.next.pages.BasePage;
+import co.uk.next.pages.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,12 +12,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.PageFactory;
 
-public class AccountSearchSteps {
+public class AccountSearchSteps extends BasePage {
+
+    HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+
 
     // importing selenium into my project
 
-    WebDriver driver;
+
 
     // here i create an object
     // is selenium
@@ -24,6 +30,8 @@ public class AccountSearchSteps {
 
     @Given("I navigate to next homepage")
     public void i_navigate_to_next_homepage() {
+        homePage.launchURL();
+        homePage.clickOnaFindOutMore();
 
         //Launch a browser
         //Enter the URL
@@ -34,7 +42,7 @@ public class AccountSearchSteps {
         driver = new ChromeDriver();
 
         driver.navigate().to("https://www.next.co.uk/");
-        driver.findElement(By.className("class=\"nxbtn primary large\"")).sendKeys();
+       // driver.findElement(By.className("class=\"nxbtn primary large\"")).sendKeys();
 
 
         // I want driver to launch chrome for (driver = new ChromeDriver();)
@@ -51,7 +59,8 @@ public class AccountSearchSteps {
     }
 
     @When("I click on {string} button")
-    public void i_click_on_button(String string) {
+    public void i_click_on_button(String registernow) {
+        //homePage.enterLocationValue(registernow);
 
     }
 

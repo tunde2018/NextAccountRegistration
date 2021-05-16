@@ -3,7 +3,7 @@ Feature: New account
   I want to be able to open account
   So I buy items of my choice
 
-  Scenario Outline:  Open new account
+  Scenario Outline:  Customer Open new account
     Given I navigate to next homepage
     When I click on "<REGISTER NOW>" button
     And I select "<MyTitle>" from Title dropdown

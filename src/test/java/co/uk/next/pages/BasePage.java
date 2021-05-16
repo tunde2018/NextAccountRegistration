@@ -1,13 +1,17 @@
 package co.uk.next.pages;
 
-import co.uk.next.common.DriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class BasePage extends DriverManager
-{
-    public String BASE_URL = "https://www3.next.co.uk/";
+import java.sql.*;
+import java.util.Properties;
+import java.util.logging.Logger;
+
+public class BasePage implements Driver {
+    public String BASE_URL = "https://www.next.co.uk/";
     public Select select;
+    protected WebDriver driver;
 
     public void launchURL()
     {
@@ -31,5 +35,40 @@ public class BasePage extends DriverManager
        select = new Select(element);
        select.selectByIndex(index);
 
+    }
+
+    @Override
+    public Connection connect(String url, Properties info) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public boolean acceptsURL(String url) throws SQLException {
+        return false;
+    }
+
+    @Override
+    public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException {
+        return new DriverPropertyInfo[0];
+    }
+
+    @Override
+    public int getMajorVersion() {
+        return 0;
+    }
+
+    @Override
+    public int getMinorVersion() {
+        return 0;
+    }
+
+    @Override
+    public boolean jdbcCompliant() {
+        return false;
+    }
+
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return null;
     }
 }

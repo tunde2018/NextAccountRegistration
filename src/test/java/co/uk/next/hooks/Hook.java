@@ -1,6 +1,5 @@
 package co.uk.next.hooks;
 
-import co.uk.next.common.BrowsersManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
@@ -14,10 +13,16 @@ public class Hook extends BrowsersManager
         launchBrowser("Chrome");
     }
 
+    private void launchBrowser(String chrome) {
+    }
+
     @After
             public void tearDown()
 
     {
       closeBrowser();
+    }
+
+    private void closeBrowser() {
     }
 }

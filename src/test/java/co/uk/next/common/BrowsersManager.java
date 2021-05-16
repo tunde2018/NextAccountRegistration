@@ -80,6 +80,7 @@ public class BrowsersManager extends DriverManager
 
     public void closeBrowser()
     {
+        WebDriver driver = null;
         driver.manage().deleteAllCookies();
     }
 }
